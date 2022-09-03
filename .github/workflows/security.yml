@@ -1,0 +1,35 @@
+name: MSDO IaC Scan
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ master ]
+    
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  security:
+    runs-on: windows-latest
+    continue-on-error: false
+    strategy:
+      fail-fast: true
+      
+    steps:
+    - uses: actions/checkout@v2
+    
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: |
+          5.0.x
+          6.0.x
+          
+    - name: Run Microsoft Security DevOps
+      uses: microsoft/security-devops-action@preview
+      continue-on-error: false
+      id: msdo
+      with:
+        tools: terrascan, templateanalyzer
+        categories: 'IaC'
