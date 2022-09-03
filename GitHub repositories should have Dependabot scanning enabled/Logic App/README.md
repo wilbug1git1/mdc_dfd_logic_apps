@@ -4,7 +4,7 @@ This Logic App deployment template is provided to remediate the GitHub repositor
 
   
 
-<a href="https://raw.githubusercontent.com/wilbug1git1/mdc_dfd_logic_apps/gh-dependa-initial-commit/GitHub%20repositories%20should%20have%20Dependabot%20scanning%20enabled/Logic%20App/azuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fwilbug1git1%2Fmdc_dfd_logic_apps%2Fgh-dependa-initial-commit%2FGitHub%20repositories%20should%20have%20Dependabot%20scanning%20enabled%2FLogic%20App%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
