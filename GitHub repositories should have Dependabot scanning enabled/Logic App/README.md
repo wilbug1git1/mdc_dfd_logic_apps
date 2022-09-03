@@ -4,7 +4,7 @@ This Logic App deployment template is provided to remediate the GitHub repositor
 
   
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fwilbug1git1%2FMicrosoft-Defender-for-Cloud%2Fmaster%2FRemediation%2520scripts%2FAutomation%2520account%2520variables%2520should%2520be%2520encrypted%2FLogic%2520App%2Fazuredeploy.json" target="_blank">
+<a href="https://raw.githubusercontent.com/wilbug1git1/mdc_dfd_logic_apps/gh-dependa-initial-commit/GitHub%20repositories%20should%20have%20Dependabot%20scanning%20enabled/Logic%20App/azuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
