@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Analyzer.BicepProcessor</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.Templates.Analyzer.Utilities.BicepLocationResolver">
+            <summary>
+            An <see cref="T:Microsoft.Azure.Templates.Analyzer.Utilities.ILineNumberResolver"/> used for resolving line numbers from a compiled JSON template to the original Bicep template.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.Utilities.BicepLocationResolver.#ctor(Microsoft.Azure.Templates.Analyzer.Types.TemplateContext)">
+            <summary>
+            Create a new instance with the given <see cref="T:Microsoft.Azure.Templates.Analyzer.Types.TemplateContext"/>.
+            </summary>
+            <param name="templateContext">The template context to map JSON paths against.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.Utilities.BicepLocationResolver.ResolveLineNumber(System.String)">
+            <summary>
+            Given a JSON path in an expanded JSON template from a compiled Bicep file, find the equivalent line number
+            in the original Bicep template.
+            </summary>
+            <param name="pathInExpandedTemplate">The path in the expanded template
+            to find the line number of in the original template.</param>
+            <returns>The line number of the equivalent location in the original template,
+            or 1 if it can't be determined.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Templates.Analyzer.BicepProcessor.BicepTemplateProcessor">
+            <summary>
+            Contains functionality to process Bicep templates.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.BicepProcessor.BicepTemplateProcessor.ConvertBicepToJson(System.String)">
+            <summary>
+            Converts Bicep template into JSON template and returns it as a string and its source map
+            </summary>
+            <param name="bicepPath">The Bicep template file path.</param>
+            <returns>The compiled template as a <c>JSON</c> string and its source map.</returns>
+        </member>
+    </members>
+</doc>

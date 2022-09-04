@@ -1,0 +1,284 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.BicepProcessor\\Analyzer.BicepProcessor.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.BicepProcessor\\Analyzer.BicepProcessor.csproj": {
+      "version": "0.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.BicepProcessor\\Analyzer.BicepProcessor.csproj",
+        "projectName": "Analyzer.BicepProcessor",
+        "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.BicepProcessor\\Analyzer.BicepProcessor.csproj",
+        "packagesPath": "C:\\Users\\wilbug1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.BicepProcessor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\NuGet.Config",
+          "C:\\Users\\wilbug1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\Analyzer.TemplateProcessor.csproj": {
+                "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\Analyzer.TemplateProcessor.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Bicep.Core": {
+              "target": "Package",
+              "version": "[0.8.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\Analyzer.TemplateProcessor.csproj": {
+      "version": "0.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\Analyzer.TemplateProcessor.csproj",
+        "projectName": "Microsoft.Azure.Templates.Analyzer.TemplateProcessor",
+        "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\Analyzer.TemplateProcessor.csproj",
+        "packagesPath": "C:\\Users\\wilbug1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.TemplateProcessor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\NuGet.Config",
+          "C:\\Users\\wilbug1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\Analyzer.Utilities.csproj": {
+                "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\Analyzer.Utilities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Azure.Deployments.Core": {
+              "target": "Package",
+              "version": "[1.0.635, )"
+            },
+            "Azure.Deployments.Expression": {
+              "target": "Package",
+              "version": "[1.0.635, )"
+            },
+            "Azure.Deployments.Templates": {
+              "target": "Package",
+              "version": "[1.0.635, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\Analyzer.Types.csproj": {
+      "version": "0.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\Analyzer.Types.csproj",
+        "projectName": "Microsoft.Azure.Templates.Analyzer.Types",
+        "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\Analyzer.Types.csproj",
+        "packagesPath": "C:\\Users\\wilbug1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\NuGet.Config",
+          "C:\\Users\\wilbug1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\Analyzer.Utilities.csproj": {
+      "version": "0.2.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\Analyzer.Utilities.csproj",
+        "projectName": "Microsoft.Azure.Templates.Analyzer.Utilities",
+        "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\Analyzer.Utilities.csproj",
+        "packagesPath": "C:\\Users\\wilbug1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Utilities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\NuGet.Config",
+          "C:\\Users\\wilbug1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\Analyzer.Types.csproj": {
+                "projectPath": "C:\\Users\\wilbug1\\source\\repos\\template-analyzer\\src\\Analyzer.Types\\Analyzer.Types.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

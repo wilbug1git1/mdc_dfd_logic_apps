@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Azure.Templates.Analyzer.TemplateProcessor</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor">
+            <summary>
+            Contains functionality to process all language expressions in ARM templates. 
+            Generates placeholder values when parameter values are not provided.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ResourceMappings">
+            <summary>
+            Mapping between resources in the expanded template to their original resource in 
+            the original template. Used to get line numbers.
+            The key is the path in the expanded template with value being the path
+            in the original template.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.#ctor(System.String,System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+             Constructor for the ARM Template Processing library
+            </summary>
+            <param name="armTemplate">The ARM Template <c>JSON</c>. Must follow this schema: https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#</param>
+            <param name="apiVersion">The deployment API version. Must be a valid version from the deploymetns list here: https://docs.microsoft.com/azure/templates/microsoft.resources/allversions</param>
+            <param name="logger">A logger to report errors and debug information</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ProcessTemplate">
+            <summary>
+            Processes the ARM template with placeholder parameters and deployment metadata.
+            </summary>
+            <returns>The processed template as a <c>JSON</c> object.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ProcessTemplate(System.String)">
+            <summary>
+            Processes the ARM template with provided parameters and placeholder deployment metadata.
+            </summary>
+            <param name="parameters">The template parameters and their values <c>JSON</c>. Must follow this schema: https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#</param>
+            <returns>The processed template as a <c>JSON</c> object.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ProcessTemplate(System.String,System.String)">
+            <summary>
+            Processes the ARM template with provided parameters and deployment metadata.
+            </summary>
+            <param name="parameters">The template parameters and their values <c>JSON</c>. Must follow this schema: https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#</param>
+            <param name="metadata">The deployment metadata <c>JSON</c>.</param>
+            <returns>The processed template as a <c>JSON</c> object.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ParseAndValidateTemplate(Microsoft.WindowsAzure.ResourceStack.Common.Collections.InsensitiveDictionary{Newtonsoft.Json.Linq.JToken},Microsoft.WindowsAzure.ResourceStack.Common.Collections.InsensitiveDictionary{Newtonsoft.Json.Linq.JToken})">
+            <summary>
+            Parses and validates the template.
+            </summary>
+            <param name="parameters">The template parameters</param>
+            <param name="metadata">The deployment metadata</param>
+            <returns>The processed template as a Template object.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ProcessResourcesAndOutputs(Azure.Deployments.Core.Definitions.Schema.Template)">
+            <summary>
+            Processes each resource for language expressions and parent resources as well
+            as processes language expressions for outputs.
+            </summary>
+            <param name="template">Template being processed.</param>
+            <returns>Template after processing resources and outputs.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.CopyResourceDependants(Azure.Deployments.Core.Definitions.Schema.TemplateResource)">
+            <summary>
+            Copies child resources into sub resources for parent resources.
+            </summary>
+            <param name="templateResource">The child resource.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.SaveFlattenedResources(Azure.Deployments.Core.Definitions.Schema.TemplateResource[],System.String,System.String,System.String)">
+            <summary>
+            Flattens resources that are defined inside other resources.
+            </summary>
+            <param name="resources">Resources in the template.</param>
+            <param name="parentName">Name of the parent resource. Used during recursive call.</param>
+            <param name="parentType">Type of the parent resource. Used during recursive call.</param>
+            <param name="parentExpandedPath">Path of the parent resource in the expanded template. Used during the recursive call.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.ProcessTemplateResourceLanguageExpressions(Azure.Deployments.Core.Definitions.Schema.TemplateResource,Azure.Deployments.Templates.Expressions.TemplateExpressionEvaluationHelper)">
+            <summary>
+            Processes language expressions in the properties property of the resources.
+            </summary>
+            <param name="templateResource">The template resource to process language expressions for.</param>
+            <param name="evaluationHelper">Evaluation helper to evaluate expressions</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.GetTemplateFunctionEvaluationHelper(Azure.Deployments.Core.Definitions.Schema.Template)">
+            <summary>
+            Gets the template expression evaluation helper.
+            </summary>
+            <param name="template">The template.</param>
+            <returns>The template expression evaluation helper</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.MapTopLevelResources(Azure.Deployments.Core.Definitions.Schema.Template,System.Collections.Generic.Dictionary{System.String,System.ValueTuple{System.String,System.Int32}})">
+            <summary>
+            Maps the resources to their original location.
+            </summary>
+            <param name="template">The template</param>
+            <param name="copyNameMap">Mapping of the copy name, the original name of the resource, and index of resource in resource list.</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.SetOriginalResourceNames(Azure.Deployments.Core.Definitions.Schema.Template)">
+            <summary>
+            Set the original name property for each resource before processing language expressions in the template.
+            This is used to help map to the original resource after processing.
+            </summary>
+            <param name="template">The template</param>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.PopulateDeploymentMetadata(System.String)">
+            <summary>
+            Populates the deployment metadata data object.
+            </summary>
+            <param name="metadata">The deployment metadata <c>JSON</c>.</param>
+            <returns>A dictionary with the metadata.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.ArmTemplateProcessor.PopulateParameters(System.String)">
+            <summary>
+            Populates the parameters data object.
+            </summary>
+            <param name="parameters">The required input parameters and their values <c>JSON</c>.</param>
+            <returns>A dictionary with required parameters.</returns>
+        </member>
+        <member name="T:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.PlaceholderInputGenerator">
+            <summary>
+            Generates placeholder values for required inputs to process templates
+            </summary>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.PlaceholderInputGenerator.GeneratePlaceholderParameters(System.String)">
+            <summary>
+            Generates placeholder parameters when no default value is specified in the ARM Template.
+            </summary>
+            <param name="armTemplate">The ARM Template to generate parameters for <c>JSON</c>.</param>
+            <returns>The Json string of the placeholder parameter values.</returns>
+        </member>
+        <member name="M:Microsoft.Azure.Templates.Analyzer.TemplateProcessor.PlaceholderInputGenerator.GeneratePlaceholderDeploymentMetadata">
+            <summary>
+            Returns the deployment metadata with placeholder data. 
+            Use this if you do not rely on the deployment metadata.
+            </summary>
+            <returns>A dictionary with mock metadata.</returns>
+        </member>
+    </members>
+</doc>
