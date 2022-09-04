@@ -1,4 +1,4 @@
-# Logic App sample for Automation Account Variables Should be Encrypted
+# Logic App sample for Enable Dependabot on a repository
 
 This Logic App deployment template is provided to remediate the GitHub repositories should have Dependabot scanning enabled recommendation in Azure Security Center.  The workflow requires a PAT token for authentication to the GitHub API.  It will leverage the following API endpoint to enable Dependabot on a repository: https://api.github.com/repos/{org}/{repository}/vulnerability-alerts
 
