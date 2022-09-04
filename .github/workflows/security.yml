@@ -25,7 +25,11 @@ jobs:
         dotnet-version: |
           5.0.x
           6.0.x
-          
+    - name: TemplateAnalyzer
+      run: |
+        dotnet build .\src\
+        .\src\Analyzer.Cli\bin\Debug\net6.0\templateanalyzer analyze-directory .
+        
     - name: Run Microsoft Security DevOps
       uses: microsoft/security-devops-action@preview
       continue-on-error: false
