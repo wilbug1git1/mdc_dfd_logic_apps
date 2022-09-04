@@ -15,7 +15,7 @@
             "name": "[parameters('workflows_Enable_Dependabot')]",
             "location": "[resourceGroup().location]",
             "properties": {
-                "definition": {
+            "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
                     "actions": {
                         "HTTP": {
@@ -89,28 +89,8 @@
                     },
                     "contentVersion": "1.0.0.0",
                     "outputs": {},
-                    "parameters": {
-                        "$connections": {
-                            "defaultValue": {},
-                            "type": "Object"
-                        }
-                    },
-                    "triggers": {
-                        "When_an_Microsoft_Defender_for_Cloud_Recommendation_is_created_or_triggered": {
-                            "inputs": {
-                                "body": {
-                                    "callback_url": "@{listCallbackUrl()}"
-                                },
-                                "host": {
-                                    "connection": {
-                                        "name": "@parameters('$connections')['ascassessment']['connectionId']"
-                                    }
-                                },
-                                "path": "/Microsoft.Security/Assessment/subscribe"
-                            },
-                            "type": "ApiConnectionWebhook"
-                        }
-                    }
+                    "parameters": {},
+                    "triggers": {}
                 }
             }
         }
